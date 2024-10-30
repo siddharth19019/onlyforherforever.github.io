@@ -1,0 +1,59 @@
+name: "Maintainer Application"
+description: "Application to become a maintainer of the website source."
+title: "Maintainer Application: [Your Name]"
+labels: ["aintainer application"]
+assignees: [ShitijHalder]
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Maintainer Application
+
+        Thank you for your interest in becoming a maintainer of our website source. Please fill out the following information to help us understand your background and motivation and love her always, forever♡
+
+  - type: input
+    id: name
+    attributes:
+      label: "Name"
+      description: "Your full name"
+      placeholder: "hers."
+    validations:
+      required: true
+
+  - type: input
+    id: github_username
+    attributes:
+      label: "GitHub Username"
+      description: "Your GitHub username"
+      placeholder: "hers."
+    validations:
+      required: true
+
+  - type: textarea
+    id: experience
+    attributes:
+      label: "Experience"
+      description: "Describe your experience with web development and open source contributions."
+      placeholder: "I have worked on..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: motivation
+    attributes:
+      label: "Motivation"
+      description: "Why do you want to become a maintainer of this project?"
+      placeholder: "I am motivated by..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: additional_questions
+    attributes:
+      label: "Additional Questions"
+      description: "Please answer the following questions:"
+      placeholder: "1. ..."
+    validations:
+      required: true
+
