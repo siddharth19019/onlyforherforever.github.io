@@ -1,0 +1,282 @@
+@font-face {
+  font-family: 'OnePlus Sans';
+  src: url('fonts/OnePlusSans.ttf') format('truetype');
+  font-display: swap; /* Add this line for better font loading */
+}
+
+body {
+  background-color: #000; /* Rich black background */
+  overflow-x: hidden;
+  margin: 0;
+  color: #fff; /* Off-white text for contrast */
+  font-family: 'OnePlus Sans'; /* Updated: Using regular OnePlus Sans */
+}
+
+/* Header Styles */
+header {
+  background-color: #000; 
+  color: #fff;
+  padding: 10px 20px;
+  position: relative;
+  border-bottom: 1px solid #333; /* Subtle separator */
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menu-icon {
+  cursor: pointer;
+}
+
+.menu-icon span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: #fff;
+  margin-bottom: 5px;
+}
+
+/* Logo Styles */
+.logo {
+  color: #fff;
+  font-size: 1.2em; 
+  text-decoration: none;
+  transition: text-shadow 0.3s ease;
+  font-family: 'Great Vibes', cursive; /* Keeping Great Vibes for the logo */
+  animation: glow 1s ease-in-out infinite alternate; /* Apply glow permanently */
+}
+
+@keyframes glow {
+  0% {
+    text-shadow: 0 0 5px #f8e71c, 0 0 10px #f8e71c, 0 0 15px #f8e71c, 0 0 20px #f8e71c;
+  }
+  100% {
+    text-shadow: 0 0 10px #f8e71c, 0 0 15px #f8e71c, 0 0 20px #f8e71c, 0 0 25px #f8e71c;
+  }
+}
+
+/* Media Query for larger screens */
+@media (min-width: 769px) { 
+  .logo {
+    font-size: 3.5em; 
+  }
+}
+
+.main-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.main-nav li {
+  margin-left: 20px;
+}
+
+.main-nav a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s ease; /* Smooth color transition */
+}
+
+.main-nav a:hover {
+  color: #f8e71c; /* Yellow hover color */
+}
+
+
+/* Dropdown Menu Styles */
+.dropdown-menu {
+  display: none; 
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background-color: #121212;  
+  padding: 20px;
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.dropdown-menu.show {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.dropdown-menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.dropdown-menu li {
+  margin-bottom: 15px;
+}
+
+.dropdown-menu a {
+  color: #fff;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  transition: color 0.3s ease; /* Smooth color transition */
+}
+
+.dropdown-menu a:hover {
+  color: #f8e71c; /* Yellow hover color */
+}
+
+.dropdown-menu ul li {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  transition-delay: calc(0.1s * var(--i));
+}
+
+.dropdown-menu.show ul li {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.dropdown-menu .icon {
+  margin-right: 10px;
+  color: #f00; /* Keep the red color for icons */
+}
+
+.dropdown-menu .try-beta {
+  margin-top: 20px;
+  border-top: 1px solid #333;
+  padding-top: 20px;
+}
+
+.dropdown-menu li:hover {
+  transform: scale(1.05);
+}
+
+/* Post Styles */
+.post {
+  border: 1px solid #29333c;
+  padding: 15px;
+  background-color: #081521; 
+  margin: 10px;
+  border-radius: 8px;
+  transition: background-color 0.2s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  overflow: hidden; /* Ensures content doesn't spill out */
+}
+
+.post .expand:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #1da1f2; 
+}
+
+.post:hover {
+  background-color: #1a2734; 
+}
+
+.post-number {
+  display: none;
+}
+
+.highlight {
+  background-color: #222;
+  border-color: #1da1f2;
+}
+
+.header { 
+  display: flex;
+  align-items: center;
+}
+
+.avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  margin-right: 10px;
+  object-fit: cover; /* Ensures avatars are fully visible */
+}
+
+.username {
+  font-weight: bold;
+  color: #fff;
+}
+
+.date {
+  font-size: smaller;
+  color: #8899a6;
+}
+
+.story-type {
+  font-size: smaller;
+  color: #f8e71c; 
+  font-style: italic;
+  margin-left: 10px;
+}
+
+.headline {
+  margin-top: 15px;
+  font-size: 1.3em; 
+  font-weight: 600; 
+  font-family: 'OnePlus Sans'; /* Updated: Using regular OnePlus Sans */
+}
+
+.expand {
+  color: #1da1f2;
+  cursor: pointer;
+  text-decoration: underline; 
+  transition: color 0.2s ease; 
+  margin-bottom: 10px;
+}
+
+.expand:hover {
+  color: #1da1f2; 
+}
+
+.story-content {
+  display: none;
+  margin-top: 10px;
+}
+
+#post-container {
+  padding-top: 0px; 
+}
+
+/* Share Button Styles */
+.share-button {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 7px;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #eee;
+  font-size: 0.9em;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+  margin-left: 0;
+}
+
+.share-button:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  transform: translateY(-1px);
+}
+
+.share-button i {
+  font-size: 1.2em;
+  margin-right: 8px;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .main-nav ul {
+    flex-direction: column;
+  }
+
+  .main-nav li {
+    margin: 10px 0;
+  }
+}

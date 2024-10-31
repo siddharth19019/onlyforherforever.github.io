@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>~onlyforherforever</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="preload" href="https://onlyforherforever.github.io/css/fonts/OnePlusSans.ttf" as="font" type="font/ttf" crossorigin>
+  <meta name="keywords" content="तू होती तो इतनी ख़ुशी होती कि ख़ुशी मुझसे दुखी होती।">
+  <meta name="description" content="A poetic web project celebrating love, life, and the beauty found in everyday moments. It's an ode to a special person and the unique connection shared between two souls.">
+  <link href="image_assets/hers.ico" rel="icon">
+</head>
+<body>
+
+  <header>
+    <div class="container">
+      <div class="menu-icon">
+        <span></span>
+        <span></span>
+      </div>
+      <a href="#" class="logo">𝘰𝘯𝘭𝘺𝘧𝘰𝘳𝘩𝘦𝘳𝘧𝘰𝘳𝘦𝘷𝘦𝘳♡</a> 
+      <nav class="main-nav">
+        <ul>
+          <li><a href="https://github.com/onlyforherforever/onlyforherforever.github.io/blob/main/docs/howtousethisproject.md"><i class="fas fa-pen-fancy" style="color: red;"></i> Make your own story</a></li>
+          <li><a href="https://youtu.be/5NV6Rdv1a3I" id="feelingLucky" target="_blank"><i class="fas fa-dice" style="color: red;"></i> I'm Feeling Lucky</a></li>
+          <li><a href="https://github.com/onlyforherforever/onlyforherforever"><i class="fas fa-code" style="color: red;"></i> See the source</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="dropdown-menu">
+      <ul>
+        <li style="--i: 0;"><a href="index.html" id="homeLink"><i class="icon fas fa-home"></i> Home♡</a></li>
+        <li style="--i: 1;"><a href="https://m.youtube.com/watch?v=1G4isv_Fylg" id="whoIsSheLink"><i class="icon fas fa-heart"></i> Who is her?</a></li> 
+        <li style="--i: 2;"><a href="https://github.com/onlyforherforever/onlyforherforever?tab=readme-ov-file#%F0%9D%98%AA-%F0%9D%98%A2%F0%9D%98%AE-%F0%9D%98%B0%F0%9D%98%AF%F0%9D%98%AD%F0%9D%98%BA-%F0%9D%98%A7%F0%9D%98%B0%F0%9D%98%B3-%F0%9D%98%A9%F0%9D%98%A6%F0%9D%98%B3-%F0%9D%98%A7%F0%9D%98%B0%F0%9D%98%B3%F0%9D%98%A6%F0%9D%98%B7%F0%9D%98%A6%F0%9D%98%B3" id="purposeLink"><i class="icon fas fa-question-circle"></i> Purpose of this project?</a></li> 
+        <li style="--i: 3;"><a href="https://github.com/onlyforherforever/onlyforherforever/issues/new?assignees=ShitijHalder&labels=maintainer+application&projects=&template=maintainers-application.yml&title=Maintainer+Application%3A+%5BYour+Name%5D" class="become-maintainer"><i class="fas fa-hands-helping" style="color: yellow;"></i>‎ ‎ Become a Maintainer♡</a></li> 
+      </ul>
+    </div>
+  </header>
+
+  <main>
+    <div id="post-container"></div>
+  </main>
+
+  <script>
+    const posts = [
+      {
+        avatar: "https://avatars.githubusercontent.com/u/89300443?v=4",
+        username: "@shitijnotop",
+        date: "Oct 29, 2024",
+        storyType: "Feeling",
+        headline: "This is the headline of the post!",
+        story: "This is the full story content that will be revealed when you click 'Read more'. You can add more text here to make it longer and more interesting."
+      },
+      {
+        avatar: "https://via.placeholder.com/48",
+        username: "@anotheruser",
+        date: "Oct 26, 2024",
+        storyType: "Thought",
+        headline: "Another interesting post here.",
+        story: "This is the content of the second post. It can be as long or as short as you like. Feel free to add more details, links, or anything else you want to include."
+      },
+      {
+        avatar: "https://via.placeholder.com/48",
+        username: "@testuser",
+        date: "Oct 28, 2024",
+        storyType: "Crush",
+        headline: "This is another post to test the sorting!",
+        story: "Some more content here to make the post a bit longer."
+      },
+      // ... more posts
+    ];
+
+    const postContainer = document.getElementById('post-container');
+
+    function createPostElement(post, index) {
+      return `
+        <div class="post" id="post-${index}" data-date="${post.date}">
+          <a id="post-anchor-${index}" class="post-anchor"></a> 
+          <div class="post-number">${index + 1}</div> 
+          <div class="header">
+            <img class="avatar" src="${post.avatar}" alt="Avatar">
+            <div>
+              <span class="username">${post.username}</span>
+              <span class="date">${post.date}</span>
+              <span class="story-type">${post.storyType}</span>
+            </div>
+          </div>
+          <div class="headline">${post.headline}</div>
+          <div class="story-content">${post.story}</div>
+          <div class="expand">Read more...</div>
+          <div class="share-buttons"> 
+            <a href="#" class="share-button" data-post-index="${index}">
+              <i class="fas fa-share-alt"></i> Love this story? 
+            </a>
+          </div>
+        </div>
+      `;
+    }
+
+    function createPostLink(index) {
+      const url = new URL(window.location.href);
+      url.hash = `post-anchor-${index}`;
+      return url.toString();
+    }
+
+    posts.forEach((post, index) => {
+      const postElement = createPostElement(post, index);
+      postContainer.innerHTML += postElement;
+    });
+
+    const expandLinks = document.querySelectorAll('.expand');
+    expandLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        const storyContent = link.previousElementSibling;
+        storyContent.style.display = storyContent.style.display === 'block' ? 'none' : 'block';
+        link.textContent = storyContent.style.display === 'block' ? 'Read less' : 'Read more...';
+      });
+    });
+
+    const menuIcon = document.querySelector('.menu-icon');
+    const dropdownMenu = document.querySelector('.dropdown-menu');
+
+    menuIcon.addEventListener('click', () => {
+      dropdownMenu.classList.toggle('show'); 
+    });
+
+    const homeLink = document.getElementById('homeLink');
+    const allPosts = document.querySelectorAll('.post');
+
+    homeLink.addEventListener('click', (event) => {
+      event.preventDefault();
+
+      allPosts.forEach(post => {
+        post.style.display = 'block';
+      });
+
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    postContainer.addEventListener('click', (event) => {
+      if (event.target.classList.contains('share-button')) {
+        const postIndex = event.target.dataset.postIndex;
+        const post = posts[postIndex];
+
+        const postLink = createPostLink(postIndex);
+        const shareText = `${post.headline}\n\n${post.story.substring(0, 100)}...\n\nRead more: ${postLink}`;
+
+        if (navigator.share) {
+          navigator.share({
+            title: 'Share this post',
+            text: shareText,
+          })
+          .then(() => console.log('Successful share'))
+          .catch((error) => console.log('Error sharing:', error));
+        } else {
+          alert('Sharing is not supported in your browser. Please copy the text below and share it manually:\n\n' + shareText);
+        }
+      }
+    });
+  </script>
+</body>
+</html>
