@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>~onlyforherforever</title>
+  <title>onlyforherforever.</title>
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <meta name="keywords" content="तू होती तो इतनी ख़ुशी होती कि ख़ुशी मुझसे दुखी होती।">
@@ -11,31 +11,55 @@
   <link href="image_assets/hers.ico" rel="icon">
 </head>
 <body>
-  <div class="cursor"></div>
+
+  <!-- Header Section -->
   <header>
     <div class="container">
-      <div class="menu-icon">
-        <span></span>
-        <span></span>
+      <!-- Logo -->
+      <div class="logo">
+        <a>onlyforherforever♡</a>
       </div>
-      <a href="#" class="logo">𝘰𝘯𝘭𝘺𝘧𝘰𝘳𝘩𝘦𝘳𝘧𝘰𝘳𝘦𝘷𝘦𝘳♡</a>
-      <nav class="main-nav">
-        <ul>
-          <li><a href="https://github.com/onlyforherforever/onlyforherforever.github.io/blob/main/docs/howtousethisproject.md"><i class="fas fa-pen-fancy" style="color: red;"></i> Make your own story</a></li>
-          <li><a href="https://youtu.be/5NV6Rdv1a3I" id="feelingLucky" target="_blank"><i class="fas fa-dice" style="color: red;"></i> I'm Feeling Lucky</a></li>
-          <li><a href="https://github.com/onlyforherforever/onlyforherforever"><i class="fas fa-code" style="color: red;"></i> See the source</a></li>
-        </ul>
-      </nav>
-    </div>
-    <div class="dropdown-menu">
-      <ul>
-        <li style="--i: 0;"><a href="index.html" id="homeLink"><i class="icon fas fa-home"></i> Home♡</a></li>
-        <li style="--i: 1;"><a href="https://m.youtube.com/watch?v=1G4isv_Fylg" id="whoIsSheLink"><i class="icon fas fa-heart"></i> Who is her?</a></li>
-        <li style="--i: 2;"><a href="https://github.com/onlyforherforever/onlyforherforever?tab=readme-ov-file#%F0%9D%98%AA-%F0%9D%98%A2%F0%9D%98%AE-%F0%9D%98%B0%F0%9D%98%AF%F0%9D%98%AD%F0%9D%98%BA-%F0%9D%98%A7%F0%9D%98%B0%F0%9D%98%B3-%F0%9D%98%A9%F0%9D%98%A6%F0%9D%98%B3-%F0%9D%98%A7%F0%9D%98%B0%F0%9D%98%B3%F0%9D%98%A6%F0%9D%98%B7%F0%9D%98%A6%F0%9D%98%B3" id="purposeLink"><i class="icon fas fa-question-circle"></i> Purpose of this project?</a></li>
-        <li style="--i: 3;"><a href="https://github.com/onlyforherforever/onlyforherforever/issues/new?assignees=ShitijHalder&labels=maintainer+application&projects=&template=maintainers-application.yml&title=Maintainer+Application%3A+%5BYour+Name%5D" class="become-maintainer"><i class="fas fa-hands-helping" style="color: yellow;"></i>‎ ‎ Become a Maintainer♡</a></li>
-      </ul>
+      <!-- Menu Icon for Sidebar -->
+      <div class="menu-icon" onclick="toggleSidebar()">
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+      </div>
     </div>
   </header>
+
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <button class="back-button" onclick="closeSidebar()">←</button>
+    <div class="sidebar-content">
+      <!-- Sidebar Banner -->
+      <a href="https://onlyforherforever.github.io/" target="_blank">
+        <img src="image_assets/hers.png" alt="Banner" class="sidebar-banner" width="300" height="250">
+      </a>
+      <!-- Navigation Links -->
+      <ul class="nav-links">
+        <li><a href="https://github.com/onlyforherforever/onlyforherforever.github.io?tab=readme-ov-file#%F0%9D%98%AA-%F0%9D%98%A2%F0%9D%98%AE-%F0%9D%98%B0%F0%9D%98%AF%F0%9D%98%AD%F0%9D%98%BA-%F0%9D%98%A7%F0%9D%98%B0%F0%9D%98%B3-%F0%9D%98%A9%F0%9D%98%A6%F0%9D%98%B3-%F0%9D%98%A7%F0%9D%98%B0%F0%9D%98%B3%F0%9D%98%A6%F0%9D%98%B7%F0%9D%98%A6%F0%9D%98%B3">Purpose Of This Project</a></li>
+        <li><a href="https://github.com/onlyforherforever/onlyforherforever.github.io/blob/main/docs/howtousethisproject.md#how-to-use-this-project">Make Your Own Story</a></li>
+        <li><a href="https://github.com/onlyforherforever/onlyforherforever.github.io">Go To The Source</a></li>
+        <li><a href="https://github.com/onlyforherforever/onlyforherforever.github.io/issues/new?assignees=ShitijHalder&labels=aintainer+application&projects=&template=maintainers-application.yml&title=Maintainer+Application%3A+%5BYour+Name%5D">Maintainership</a></li>
+        <li><a href="https://github.com/onlyforherforever">Go To ORG</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <script>
+    // Function to toggle the sidebar visibility
+    function toggleSidebar() {
+      const sidebar = document.querySelector('.sidebar');
+      sidebar.classList.toggle('open');
+    }
+
+    // Function to close the sidebar manually
+    function closeSidebar() {
+      const sidebar = document.querySelector('.sidebar');
+      sidebar.classList.remove('open');
+    }
+  </script>
 
   <main>
     <div id="post-container"></div>
@@ -61,7 +85,7 @@
         storyType: "Olden Golden Memories",
         headline: "Back to School - Chapter 01",
         story: "Long ago, there lived a boy named Zzz. He was a very small kid and didn't know anything about the environment or people. He went to school daily but was a below-average student. He didn't even do his homework. The funny guy was not at all interested in studies, and so he scored poor marks. His parents were very loving and kept motivating him with kind words even though he scored poorly. He didn't even have his own unique handwriting. He always tried to copy homework from other students—not only the content but also the handwriting itself. He had different handwriting for different subjects! That's why he couldn't maintain good handwriting. Months passed, years passed. Now he was in 3rd standard. One day, as usual, he forgot to do his math homework and submitted his notebook blank. His math teacher, named Rekha, called his name. With fear in his eyes, Zzz walked slowly towards his teacher.  His math teacher angrily asked him why he didn't do his homework. He replied to his teacher with a shaky, trembling voice that he 'forgot.' Hearing that, his math teacher became furious and took a wooden pencil, placing it between Zzz's fingers. She held his fingers tightly with one hand and kept twisting the pencil with the other. Zzz started crying out loud in pain. Yet, the math teacher didn't stop and kept twisting the pencil. Zzz's body shivered heavily that whole day, and he couldn't even hold anything with his hand. He couldn't tolerate that much physical pain and cried all day. His poor little eyes dried up from crying. He somehow managed to eat lunch, but only a quarter of what was in his lunch box. That incident left a lifelong trauma in his heart, and he hated math very much. Somehow, he passed all the exams and was promoted to class 4. Do you think this silly guy would change in the 4th standard? Nah, that's not in his case. One day, he forgot his social science homework and submitted it blank. As usual, a strict social science teacher entered the class... to be continued...",
-      },
+      }
       // ... more posts to be added on top of the last post!
     ];
 
@@ -148,5 +172,4 @@
   </script>
 
 </body>
-
 </html>

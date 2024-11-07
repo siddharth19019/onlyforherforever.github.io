@@ -1,9 +1,11 @@
+/* Define custom font face */
 @font-face {
   font-family: 'OnePlus Sans';
-  src: url('fonts/OnePlusSans.ttf') format('truetype');
+  src: url('/fonts/OnePlusSans.ttf') format('truetype');
   font-display: swap; /* Add this line for better font loading */
 }
 
+/* Body Styles */
 body {
   background-color: #000; /* Rich black background */
   overflow-x: hidden;
@@ -15,76 +17,194 @@ body {
 
 /* Header Styles */
 header {
-  background-color: #000; 
-  color: #fff;
-  padding: 10px 20px;
-  position: relative;
-  border-bottom: 1px solid #333; /* Subtle separator */
+  position: sticky;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 20px 20px;
+  display: flex;
+  z-index: 1000;
+  border-bottom: 1px solid #333;
 }
 
+/* Container Styles */
 .container {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.menu-icon {
-  cursor: pointer;
-}
-
-.menu-icon span {
-  display: block;
-  width: 25px;
-  height: 3px;
-  background-color: #fff;
-  margin-bottom: 5px;
+  align-items: center;  /* Center items vertically by default */
+  width: 100%;
 }
 
 /* Logo Styles */
 .logo {
-  color: #fff; /* Keeping the logo text color as white */
-  font-size: 1.2em; 
-  text-decoration: none;
-  transition: text-shadow 0.3s ease;
-  font-family: 'Great Vibes', cursive; /* Keeping Great Vibes for the logo */
+  font-size: 2.5em;
+  color: #f8e71c;
+  font-family: 'Great Vibes', cursive;
+  text-shadow: 0 0 10px rgba(248, 231, 28, 0.6);
   animation: glow 1s ease-in-out infinite alternate; /* Apply glow permanently */
+  margin: 0 auto;  /* Center logo horizontally by default */
 }
 
+.logo a {
+  color: #f8e71c;
+  text-decoration: none;
+}
+
+/* Glow Animation for Logo */
 @keyframes glow {
   0% {
-    text-shadow: 0 0 5px #F8E71C, 0 0 10px #F8E71C, 0 0 15px #F8E71C, 0 0 20px #F8E71C; /* Yellow glow */
+    text-shadow: 0 0 5px #f8e71c, 0 0 10px #f8e71c, 0 0 15px #f8e71c, 0 0 20px #f8e71c;
   }
   100% {
-    text-shadow: 0 0 10px #F8E71C, 0 0 15px #F8E71C, 0 0 20px #F8E71C, 0 0 25px #F8E71C; /* Yellow glow */
+    text-shadow: 0 0 10px #f8e71c, 0 0 15px #f8e71c, 0 0 20px #f8e71c, 0 0 25px #f8e71c;
   }
 }
 
-/* Media Query for larger screens */
-@media (min-width: 769px) { 
-  .logo {
-    font-size: 3.5em; 
-  }
-}
-
-.main-nav ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
+/* Horizontal 3-dot Menu Icon */
+.menu-icon {
   display: flex;
+  gap: 5px;
+  cursor: pointer;
 }
 
-.main-nav li {
-  margin-left: 20px;
+.menu-icon .dot {
+  width: 5px;
+  height: 5px;
+  background-color: #fff;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
 }
 
-.main-nav a {
+/* Right Sidebar Styles */
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: -300px;
+  height: 100%;
+  width: 300px;
+  background: rgba(0, 0, 0, 0.80);
+  backdrop-filter: blur(10px);
+  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+  z-index: 1100;
+}
+
+.sidebar.open {
+  transform: translateX(-300px);
+}
+
+/* Sidebar Content Styles */
+.sidebar-content {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%; /* Center menu items vertically */
+}
+
+/* Back Button Styling */
+.back-button {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background-color: transparent;
+  border: none;
+  color: #f8e71c;
+  font-size: 3.0em;
+  cursor: pointer;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.back-button:hover {
+  color: #fff;
+}
+
+/* Desktop-Specific Styles */
+@media (min-width: 768px) {  /* Apply styles for screens wider than 768px (typical desktop breakpoint) */
+  .container {
+    justify-content: space-between;  /* Center items horizontally only on desktop */
+  }
+  .logo {
+    margin: 0 auto;  /* Reset default margin for precise centering (optional) */
+  }
+}
+
+/* Centered Menu Items */
+.nav-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.nav-links li {
+  text-align: center;
+}
+
+.nav-links li a {
   color: #fff;
   text-decoration: none;
-  transition: color 0.3s ease; /* Smooth color transition */
+  font-size: 1.3em; /* Default font size */
+  transition: color 0.3s ease;
 }
 
-.main-nav a:hover {
-  color: #f8e71c; /* Yellow hover color */
+.nav-links li a:hover {
+  color: #f8e71c;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* Full-width sidebar for mobile */
+  .sidebar {
+    width: 100%;
+    right: -100%;
+  }
+
+  .sidebar.open {
+    transform: translateX(-100%);
+  }
+
+  /* Increase font size only within the sidebar for mobile */
+  .sidebar .back-button {
+    font-size: 3.0em; /* Larger back button for mobile */
+    top: 10px;
+    left: 10px;
+  }
+
+  .sidebar .nav-links li a {
+    font-size: 2em; /* Larger font size for menu links in sidebar */
+  }
+}
+
+/* Sidebar Banner Styles */
+.sidebar-banner {
+  width: 100%; /* Or adjust to your desired width */
+  margin-bottom: 30px; /* Add spacing below the banner */
+}
+
+/* Add hover effect to the entire 3 dots menu icon box */
+.menu-icon:hover {
+  transform: scale(1.2); /* Increase size on hover */
+  background-color: rgba(248, 231, 28, 0.2); /* Change background color on hover */
+  border-radius: 8px; /* Add rounded corners */
+  box-shadow: 0 0 10px #f8e71c, 0 0 20px #f8e71c, 0 0 30px #f8e71c; /* Add glowing effect */
+  transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+}
+
+/* Add hover effect to the back button */
+.back-button:hover {
+  color: #fff; /* Existing color change on hover */
+  transform: scale(0.8); /* Slightly increase or decrease size on hover */
+  text-shadow: 0 0 10px #f8e71c, 0 0 20px #f8e71c, 0 0 30px #f8e71c; /* Add glowing effect */
+  transition: transform 0.3s ease, color 0.3s ease, text-shadow 0.3s ease; /* Smooth transition */
 }
 
 /* Dropdown Menu Styles */
@@ -180,20 +300,24 @@ header {
   box-shadow: 0 0 0 2px #1da1f2; 
 }
 
+/* Post Number Styles */
 .post-number {
   display: none;
 }
 
+/* Highlight Styles */
 .highlight {
   background-color: #222;
   border-color: #1da1f2;
 }
 
+/* Post Header Styles */
 .header { 
   display: flex;
   align-items: center;
 }
 
+/* Avatar Styles */
 .avatar {
   width: 48px;
   height: 48px;
@@ -202,16 +326,19 @@ header {
   object-fit: cover; /* Ensures avatars are fully visible */
 }
 
+/* Username Styles */
 .username {
   font-weight: bold;
   color: #fff;
 }
 
+/* Date Styles */
 .date {
   font-size: smaller;
   color: #8899a6;
 }
 
+/* Story Type Styles */
 .story-type {
   font-size: smaller;
   color: #f8e71c; 
@@ -219,6 +346,7 @@ header {
   margin-left: 10px;
 }
 
+/* Headline Styles */
 .headline {
   margin-top: 15px;
   font-size: 1.3em; 
@@ -226,6 +354,7 @@ header {
   font-family: 'OnePlus Sans'; /* Updated: Using regular OnePlus Sans */
 }
 
+/* Expand Button Styles */
 .expand {
   color: #1da1f2;
   cursor: pointer;
@@ -238,11 +367,13 @@ header {
   color: #1da1f2; 
 }
 
+/* Story Content Styles */
 .story-content {
   display: none;
   margin-top: 10px;
 }
 
+/* Post Container Styles */
 #post-container {
   padding-top: 0px; 
 }
