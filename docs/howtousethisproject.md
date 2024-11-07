@@ -20,6 +20,10 @@ This is a poetic web project dedicated to expressing love, life, and the beauty 
 
 This website is designed to be a collaborative space for sharing stories and feelings. Here's how you can contribute your own story:
 
+# Method 1: 
+**Telegram Bot! https://t.me/onlyforhersforever_bot**
+
+# Method 2: 
 1.  **Go to the GitHub repository:** Visit the project's GitHub repository at [https://github.com/onlyforherforever/onlyforherforever](https://github.com/onlyforherforever/onlyforherforever).
 
 2.  **Fork the repository:** Click the "Fork" button in the top right corner to create your own copy of the repository.
