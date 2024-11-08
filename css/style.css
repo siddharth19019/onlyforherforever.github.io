@@ -1,7 +1,21 @@
-/* Define custom font face */
+/* Define custom font face for post container */
 @font-face {
   font-family: 'OnePlus Sans';
   src: url('/fonts/OnePlusSans.ttf') format('truetype');
+  font-display: swap; /* Add this line for better font loading */
+}
+
+/* Define custom font face for header logo*/
+@font-face {
+  font-family: 'Dark & Black';
+  src: url('/fonts/dark-black/Dark&BlackD.otf') format('truetype');
+  font-display: swap; /* Add this line for better font loading */
+}
+
+/* Define custom font face for sidebar navigation menu*/
+@font-face {
+  font-family: 'Dark & Black';
+  src: url('/fonts/dark-black/Dark&BlackD.otf') format('truetype');
   font-display: swap; /* Add this line for better font loading */
 }
 
@@ -35,9 +49,9 @@ header {
 
 /* Logo Styles */
 .logo {
-  font-size: 2.5em;
+  font-size: 2.2em;
   color: #f8e71c;
-  font-family: 'Great Vibes', cursive;
+  font-family: 'Dark & Black', cursive;
   text-shadow: 0 0 10px rgba(248, 231, 28, 0.6);
   animation: glow 1s ease-in-out infinite alternate; /* Apply glow permanently */
   margin: 0 auto;  /* Center logo horizontally by default */
@@ -66,8 +80,8 @@ header {
 }
 
 .menu-icon .dot {
-  width: 5px;
-  height: 5px;
+  width: 8px;
+  height: 8px;
   background-color: #fff;
   border-radius: 50%;
   transition: transform 0.3s ease;
@@ -144,10 +158,12 @@ header {
   text-align: center;
 }
 
+/* Sidebar Menu Text Styles */
 .nav-links li a {
   color: #fff;
   text-decoration: none;
   font-size: 1.3em; /* Default font size */
+  font-family: 'Dark & Black'; /* Apply custom sidebar menu font */
   transition: color 0.3s ease;
 }
 
