@@ -142,28 +142,35 @@
       });
     });
 
-    // Event listener for sharing functionality
-    postContainer.addEventListener('click', (event) => {
-      if (event.target.classList.contains('share-button')) {
-        const postHeadline = event.target.dataset.postHeadline;
-        const post = posts.find(p => p.headline === postHeadline);
+    // Event listener for sharing functionality with copy-to-clipboard fallback
+  postContainer.addEventListener('click', async (event) => {
+  if (event.target.classList.contains('share-button')) {
+    const postHeadline = event.target.dataset.postHeadline;
+    const post = posts.find(p => p.headline === postHeadline);
 
-        // Generate share link
-        const postLink = createPostLink(post);
-        const shareText = `${post.headline}\n\n${post.story.substring(0, 100)}...\n\nRead more: ${postLink}`;
+    const postLink = createPostLink(post);
+    const shareText = `${post.headline}\n\n${post.story.substring(0, 100)}...\n\nRead more: ${postLink}`;
 
-        if (navigator.share) {
-          navigator.share({
-            title: 'Shared by someone beloved.',
-            text: shareText,
-          })
-          .then(() => console.log('Successful share'))
-          .catch((error) => console.log('Error sharing:', error));
-        } else {
-          alert('Sharing is not supported in your browser. Please copy the text below and share it manually:\n\n' + shareText);
-        }
+    if (navigator.share) {
+      try {
+        await navigator.share({
+          title: 'Shared by someone beloved.',
+          text: shareText,
+        });
+      } catch (error) {
+        console.log('Error sharing:', error);
       }
-    });
+    } else {
+      try {
+        await navigator.clipboard.writeText(shareText);
+        alert('Link copied to clipboard!');
+      } catch (error) {
+        console.error('Copy to clipboard failed:', error);
+      }
+    }
+  }
+});
+
 
     // Dropdown menu functionality
     document.querySelector('.menu-icon').addEventListener('click', () => {
