@@ -61,6 +61,15 @@
     }
   </script>
   <script>
+    // Toggle the sidebar open and closed when the button is clicked
+    const sidebarToggle = document.querySelector('.theme-toggle');
+    
+    sidebarToggle.addEventListener('click', () => {
+      const sidebar = document.querySelector('.sidebar');
+      sidebar.classList.toggle('open');  // This will toggle the 'open' class on the sidebar
+    });
+  </script>  
+  <script>
     // Function to toggle the sidebar visibility
     function toggleSidebar() {
       const sidebar = document.querySelector('.sidebar');
