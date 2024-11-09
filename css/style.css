@@ -419,6 +419,49 @@ header {
   margin-right: 8px;
 }
 
+/* Share Author Button Styles */
+.share-author-button {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 7px;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #eee;
+  font-size: 0.9em;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+  margin-left: 10px; /* Add spacing between the buttons */
+}
+
+.share-author-button:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  transform: translateY(-1px);
+}
+
+.share-author-button i {
+  font-size: 1.2em;
+  margin-right: 8px;
+}
+
+/* Bright Mode Styles */
+.bright-mode .share-author-button {
+  background-color: rgba(0, 0, 0, 0.05);
+  color: #333;
+}
+
+.bright-mode .share-author-button:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+  color: #111;
+}
+
+/* Add spacing between buttons if they are inside the same parent */
+.buttons-container {
+  display: flex;
+  gap: 10px; /* Adds a 10px gap between the buttons */
+}
+
+
 /* Media Queries for Responsiveness */
 @media (max-width: 768px) {
   .main-nav ul {
@@ -552,4 +595,73 @@ header {
 
 .bright-mode .story-type {
   color: #007acc; /* Blue color for story type in bright mode */
+}
+
+/* Container for Buttons */
+.buttons-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* Ensures the buttons are aligned at the start */
+  gap: 10px; /* Adds space between the buttons */
+}
+
+/* Share Button Styles */
+.share-button {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 7px;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #eee;
+  font-size: 0.9em;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+  text-decoration: none; /* Added this line to remove underline */
+}
+
+.share-button:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  transform: translateY(-1px);
+}
+
+.share-button i {
+  font-size: 1.2em;
+  margin-right: 8px;
+}
+
+/* More Posts Button Styles */
+.more-posts-button a {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 7px;
+  background-color: rgba(255, 255, 255, 0.1); /* Dark background for dark mode */
+  color: #eee; /* Light text color for dark mode */
+  font-size: 0.9em;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+  text-decoration: none;
+}
+
+.more-posts-button a:hover {
+  background-color: rgba(255, 255, 255, 0.2); /* Lighter background on hover */
+  color: #fff; /* Text color changes to white on hover */
+  transform: translateY(-1px);
+}
+
+/* Adjust for Bright Mode */
+.bright-mode .more-posts-button a {
+  background-color: rgba(0, 0, 0, 0.05); /* Light background for bright mode */
+  color: #333; /* Dark text color for bright mode */
+}
+
+.bright-mode .more-posts-button a:hover {
+  background-color: rgba(0, 0, 0, 0.1); /* Darker background on hover for bright mode */
+  color: #111; /* Darker text color on hover for bright mode */
+}
+
+.more-posts-button a i {
+  font-size: 1.2em;
+  margin-right: 8px;
 }

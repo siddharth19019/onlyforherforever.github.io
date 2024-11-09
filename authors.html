@@ -1,17 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>onlyforherforever.</title>
+  <title>Author's Stories</title>
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-  <meta name="keywords" content="तू होती तो इतनी ख़ुशी होती कि ख़ुशी मुझसे दुखी होती।">
-  <meta name="description" content="A poetic web project celebrating love, life, and the beauty found in everyday moments. It's an ode to a special person and the unique connection shared between two souls.">
   <link href="image_assets/hers.ico" rel="icon">
 </head>
-
 <body>
 
   <!-- Header Section -->
@@ -19,7 +15,7 @@
     <div class="container">
       <!-- Logo -->
       <div class="logo">
-        <a>onlyforherforever♡</a>
+        <a id="logo-text">Beloved Authors♡</a>
       </div>
       <!-- Menu Icon for Sidebar -->
       <div class="menu-icon" onclick="toggleSidebar()">
@@ -40,6 +36,7 @@
       </a>
       <!-- Navigation Links -->
       <ul class="nav-links">
+        <li><a href="/">Home</a></li>
         <li><a href="https://github.com/onlyforherforever/onlyforherforever.github.io?tab=readme-ov-file#%F0%9D%98%AA-%F0%9D%98%A2%F0%9D%98%AE-%F0%9D%98%B0%F0%9D%98%AF%F0%9D%98%AD%F0%9D%98%BA-%F0%9D%98%A7%F0%9D%98%B0%F0%9D%98%B3-%F0%9D%98%A9%F0%9D%98%A6%F0%9D%98%B3-%F0%9D%98%A7%F0%9D%98%B0%F0%9D%98%B3%F0%9D%98%A6%F0%9D%98%B7%F0%9D%98%A6%F0%9D%98%B3">Purpose Of This Project</a></li>
         <li><a href="https://github.com/onlyforherforever/onlyforherforever.github.io/blob/main/docs/howtousethisproject.md#how-to-use-this-project">Make Your Own Story</a></li>
         <li><a href="https://github.com/onlyforherforever/onlyforherforever.github.io">Go To The Source</a></li>
@@ -57,7 +54,6 @@
 
   <!-- Scripts -->
   <script>
-    // Function to toggle between dark mode and bright mode
     function toggleTheme() {
       document.body.classList.toggle('bright-mode');
       const button = document.querySelector('.theme-toggle');
@@ -68,31 +64,25 @@
       }
     }
   </script>
-
   <script>
-    // Toggle the sidebar open and closed when the button is clicked
     const sidebarToggle = document.querySelector('.theme-toggle');
-
     sidebarToggle.addEventListener('click', () => {
       const sidebar = document.querySelector('.sidebar');
-      sidebar.classList.toggle('open');  // This will toggle the 'open' class on the sidebar
+      sidebar.classList.toggle('open');
     });
   </script>
 
   <script>
-    // Function to toggle the sidebar visibility
     function toggleSidebar() {
       const sidebar = document.querySelector('.sidebar');
       sidebar.classList.toggle('open');
     }
 
-    // Function to close the sidebar manually
     function closeSidebar() {
       const sidebar = document.querySelector('.sidebar');
       sidebar.classList.remove('open');
     }
 
-    // Array of posts
     const posts = [
       {
         id: "post-2",
@@ -118,19 +108,20 @@
 
     const postContainer = document.getElementById('post-container');
 
-    // Helper function to create a URL-friendly slug from the headline
     function createSlug(headline) {
       return headline.toLowerCase().replace(/[^\w\s-]/g, '').replace(/\s+/g, '-');
     }
 
-    // Function to create a shareable link based on the headline
     function createPostLink(post) {
       const url = new URL(window.location.href);
-      url.hash = createSlug(post.headline);
-      return url.toString();
+      const baseUrl = url.origin + url.pathname;
+      return `${baseUrl}?username=${encodeURIComponent(post.username)}#${createSlug(post.headline)}`;
     }
 
-    // Function to create post element with "More posts from the author" button
+    function createAuthorLink(username) {
+      return `https://onlyforherforever.github.io/author/${username}`;
+    }
+
     function createPostElement(post) {
       return `
         <div class="post" id="${createSlug(post.headline)}" data-date="${post.date}">
@@ -145,73 +136,97 @@
           <div class="headline">${post.headline}</div>
           <div class="story-content">${post.story}</div>
           <div class="expand">Read more...</div>
-          <!-- Buttons container to hold both the 'More stories' and 'Share' buttons -->
-          <div class="buttons-container">
-            <div class="share-buttons">
-              <a href="#" class="share-button" data-post-headline="${post.headline}">
-                <i class="fas fa-share-alt"></i> Love this story?
-              </a>
-            </div>
-            <div class="more-posts-button">
-              <a href="authors.html?username=${post.username}" class="more-stories-link">
-                <i class="fas fa-user"></i> More stories from the author!
-              </a>
-            </div>
+          <div class="share-buttons"> 
+            <a href="#" class="share-button" data-post-headline="${post.headline}">
+              <i class="fas fa-share-alt"></i> Love this story? 
+            </a>
+            <a href="#" class="share-author-button" data-username="${post.username}">
+              <i class="fas fa-user-alt"></i> Share this author!
+            </a>
           </div>
         </div>
       `;
     }
 
-    // Render posts
-    posts.forEach(post => {
-      const postElement = createPostElement(post);
-      postContainer.innerHTML += postElement;
-    });
+    const urlParams = new URLSearchParams(window.location.search);
+const username = urlParams.get('username');
 
-    // Expand/collapse story content
-    document.querySelectorAll('.expand').forEach(link => {
-      link.addEventListener('click', () => {
-        const storyContent = link.previousElementSibling;
-        storyContent.style.display = storyContent.style.display === 'block' ? 'none' : 'block';
-        link.textContent = storyContent.style.display === 'block' ? 'Read less' : 'Read more...';
-      });
-    });
+// Update the header logo text based on the selected username
+if (username) {
+  const logoText = document.getElementById('logo-text');
+  const alphabetOnlyUsername = username.replace(/[^a-zA-Z]/g, '');
+  logoText.textContent = `${alphabetOnlyUsername}'s Stories♡`;
+}
 
-    // Event listener for sharing functionality with copy-to-clipboard fallback
-    postContainer.addEventListener('click', async (event) => {
-      if (event.target.classList.contains('share-button')) {
-        const postHeadline = event.target.dataset.postHeadline;
-        const post = posts.find(p => p.headline === postHeadline);
+posts.filter(post => post.username === username).forEach(post => {
+  const postElement = createPostElement(post);
+  postContainer.innerHTML += postElement;
+});
 
-        const postLink = createPostLink(post);
-        const shareText = `${post.headline}\n\n${post.story.substring(0, 100)}...\n\nRead more: ${postLink}`;
+document.querySelectorAll('.expand').forEach(link => {
+  link.addEventListener('click', () => {
+    const storyContent = link.previousElementSibling;
+    storyContent.style.display = storyContent.style.display === 'block' ? 'none' : 'block';
+    link.textContent = storyContent.style.display === 'block' ? 'Read less' : 'Read more...';
+  });
+});
 
-        if (navigator.share) {
-          try {
-            await navigator.share({
-              title: 'Shared by someone beloved.',
-              text: shareText,
-            });
-          } catch (error) {
-            console.log('Error sharing:', error);
-          }
-        } else {
-          try {
-            await navigator.clipboard.writeText(shareText);
-            alert('Link copied to clipboard!');
-          } catch (error) {
-            console.error('Copy to clipboard failed:', error);
-          }
-        }
+postContainer.addEventListener('click', async (event) => {
+  if (event.target.classList.contains('share-button')) {
+    const postHeadline = event.target.dataset.postHeadline;
+    const post = posts.find(p => p.headline === postHeadline);
+
+    const postLink = createPostLink(post);
+    const shareText = `**${post.headline}**\n\n${post.story.substring(0, 100)}...\n\nRead more: ${postLink}`;
+
+    if (navigator.share) {
+      try {
+        await navigator.share({
+          title: 'Shared by someone beloved.',
+          text: shareText,
+        });
+      } catch (error) {
+        console.log('Error sharing:', error);
       }
-    });
+    } else {
+      try {
+        await navigator.clipboard.writeText(shareText);
+        alert('Link copied to clipboard!');
+      } catch (error) {
+        console.error('Copy to clipboard failed:', error);
+      }
+    }
+  }
 
-    // Dropdown menu functionality
-    document.querySelector('.menu-icon').addEventListener('click', () => {
-      document.querySelector('.dropdown-menu').classList.toggle('show');
-    });
+  if (event.target.classList.contains('share-author-button')) {
+    const username = event.target.dataset.username;
+    const authorLink = createAuthorLink(username);
+    const shareText = `**Check out stories by** ${username} at ${authorLink}`;
+
+    if (navigator.share) {
+      try {
+        await navigator.share({
+          title: 'Shared by someone beloved.',
+          text: shareText,
+        });
+      } catch (error) {
+        console.log('Error sharing:', error);
+      }
+    } else {
+      try {
+        await navigator.clipboard.writeText(shareText);
+        alert('Link copied to clipboard!');
+      } catch (error) {
+        console.error('Copy to clipboard failed:', error);
+      }
+    }
+  }
+});
+
+function createAuthorLink(username) {
+  return `${window.location.origin}${window.location.pathname}?username=${encodeURIComponent(username)}`;
+}
   </script>
 
 </body>
-
 </html>
