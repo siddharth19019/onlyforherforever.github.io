@@ -429,3 +429,127 @@ header {
     margin: 10px 0;
   }
 }
+
+/* Styling for the theme toggle button */
+.theme-toggle {
+  background-color: #f8e71c; /* Yellow background for attention */
+  color: #111; /* Dark text for contrast */
+  font-size: 1.2em; /* Slightly larger text */
+  font-weight: bold; /* Bold text */
+  border: none; /* Remove default button border */
+  border-radius: 50px; /* Rounded corners for a modern look */
+  padding: 12px 30px; /* Add padding for more clickable area */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for a floating effect */
+}
+
+/* Hover effect for the theme toggle button */
+.theme-toggle:hover {
+  background-color: #f8d41c; /* Slightly darker yellow when hovered */
+  transform: translateY(-2px); /* Slight lift effect when hovered */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Increase shadow on hover for depth */
+}
+
+/* Focus effect for accessibility (when button is clicked or selected) */
+.theme-toggle:focus {
+  outline: none; /* Remove default focus outline */
+  box-shadow: 0 0 0 3px rgba(248, 231, 28, 0.6); /* Yellow glow outline on focus */
+}
+
+/* Bright Mode Styles */
+.bright-mode {
+  background-color: #fafafa; /* Light grayish off-white for a more comfortable background */
+  color: #111; /* Dark text color for better contrast on light background */
+}
+
+.bright-mode header {
+  background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent light background for header */
+  border-bottom: 1px solid #ddd; /* Light border for header */
+}
+
+.bright-mode .logo {
+  color: #333; /* Dark text color for the logo in bright mode */
+  text-shadow: none; /* Remove logo glow effect in bright mode */
+}
+
+.bright-mode .logo a {
+  color: #333; /* Dark color for logo links */
+}
+
+.bright-mode .menu-icon .dot {
+  background-color: #111; /* Dark color for the menu dots in bright mode */
+}
+
+.bright-mode .sidebar {
+  background-color: rgba(255, 255, 255, 0.95); /* Light, slightly transparent background for sidebar */
+}
+
+.bright-mode .sidebar-content {
+  color: #333; /* Dark text color for sidebar content */
+}
+
+.bright-mode .back-button {
+  color: #333; /* Dark color for back button text */
+}
+
+.bright-mode .nav-links li a {
+  color: #333; /* Dark color for sidebar links */
+}
+
+.bright-mode .nav-links li a:hover {
+  color: #555; /* Lighter dark color when hovering over sidebar links */
+}
+
+.bright-mode .dropdown-menu {
+  background-color: #f7f7f7; /* Light background for dropdown menu */
+  color: #111; /* Dark text color for dropdown items */
+}
+
+.bright-mode .dropdown-menu a {
+  color: #333; /* Dark color for links inside the dropdown menu */
+}
+
+.bright-mode .dropdown-menu a:hover {
+  color: #666; /* Lighter dark color when hovering over dropdown links */
+}
+
+.bright-mode .post {
+  background-color: #fff; /* White background for posts (a soft white) */
+  border: 1px solid #e2e2e2; /* Light border for posts */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for posts */
+}
+
+.bright-mode .username {
+  color: #000; /* Black text color for usernames in bright mode */
+}
+
+.bright-mode .post:hover {
+  background-color: #f9f9f9; /* Slightly darker background on hover for posts */
+}
+
+.bright-mode .share-button {
+  background-color: rgba(0, 0, 0, 0.05); /* Light background for share button */
+  color: #333; /* Dark text color for share button */
+}
+
+.bright-mode .share-button:hover {
+  background-color: rgba(0, 0, 0, 0.1); /* Darker background on hover for share button */
+  color: #111; /* Lighter text color on hover for share button */
+}
+
+.bright-mode .expand {
+  color: #007acc; /* Blue color for expand button */
+}
+
+.bright-mode .expand:hover {
+  color: #005f99; /* Darker blue on hover for expand button */
+}
+
+.bright-mode .date {
+  color: #555; /* Lighter text color for date in posts */
+}
+
+.bright-mode .story-type {
+  color: #007acc; /* Blue color for story type in bright mode */
+}

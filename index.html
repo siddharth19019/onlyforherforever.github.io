@@ -43,10 +43,23 @@
         <li><a href="https://github.com/onlyforherforever/onlyforherforever.github.io">Go To The Source</a></li>
         <li><a href="https://github.com/onlyforherforever/onlyforherforever.github.io/issues/new?assignees=ShitijHalder&labels=aintainer+application&projects=&template=maintainers-application.yml&title=Maintainer+Application%3A+%5BYour+Name%5D">Maintainership</a></li>
         <li><a href="https://github.com/onlyforherforever">Go To ORG</a></li>
+        <button class="theme-toggle" onclick="toggleTheme()" aria-label="Switch to Bright Mode">Switch to Bright Mode</button>
       </ul>
     </div>
   </div>
-
+  
+  <script>
+    // Function to toggle between dark mode and bright mode
+    function toggleTheme() {
+      document.body.classList.toggle('bright-mode');
+      const button = document.querySelector('.theme-toggle');
+      if (document.body.classList.contains('bright-mode')) {
+        button.textContent = 'Switch to Dark Mode';
+      } else {
+        button.textContent = 'Switch to Bright Mode';
+      }
+    }
+  </script>
   <script>
     // Function to toggle the sidebar visibility
     function toggleSidebar() {
