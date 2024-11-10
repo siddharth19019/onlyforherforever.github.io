@@ -35,7 +35,7 @@
     <button class="back-button" onclick="closeSidebar()">←</button>
     <div class="sidebar-content">
       <!-- Sidebar Banner -->
-      <a href="https://onlyforherforever.github.io/" target="_blank">
+      <a href="/" target="_blank">
         <img src="image_assets/hers.png" alt="Banner" class="sidebar-banner" width="300" height="250">
       </a>
       <!-- Navigation Links -->
@@ -184,7 +184,7 @@
         const post = posts.find(p => p.headline === postHeadline);
 
         const postLink = createPostLink(post);
-        const shareText = `${post.headline}\n\n${post.story.substring(0, 100)}...\n\nRead more: ${postLink}`;
+        const shareText = `**${post.headline}**\n\n${post.story.substring(0, 100)}...\n\nRead more: ${postLink}`;
 
         if (navigator.share) {
           try {
