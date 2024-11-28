@@ -85,6 +85,23 @@
       .floating-box p { 
         font-size: 1.6em; /* Adjust font size */ } 
       }
+
+    /* Adjustments for iPhone SE (1st and 2nd generation) and similar devices */
+    @media (max-width: 375px) { 
+      .floating-box {
+       width: 85%; /* Further reduced width */
+       height: calc(55% + 20vh); /* Increased height */
+       padding: 15px; /* Smaller padding */
+      }
+
+      .floating-box h2 {
+        font-size: 2.2em; /* Smaller heading */
+      }
+
+      .floating-box p {
+        font-size: 1.2em; /* Smaller text */
+      }
+    }
   </style>
 </head>
 
