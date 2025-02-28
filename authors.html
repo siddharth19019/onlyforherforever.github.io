@@ -49,145 +49,221 @@
 
   <!-- Main Content -->
   <main>
-    <div id="post-container"></div>
-  </main>
-
-  <!-- Scripts -->
-  <script>
-    function toggleTheme() {
-      document.body.classList.toggle('bright-mode');
-      const button = document.querySelector('.theme-toggle');
-      if (document.body.classList.contains('bright-mode')) {
-        button.textContent = 'Switch to Dark Mode';
-      } else {
-        button.textContent = 'Switch to Bright Mode';
-      }
-    }
-  </script>
-  <script>
-    const sidebarToggle = document.querySelector('.theme-toggle');
-    sidebarToggle.addEventListener('click', () => {
-      const sidebar = document.querySelector('.sidebar');
-      sidebar.classList.toggle('open');
-    });
-  </script>
-
-  <script>
-    function toggleSidebar() {
-      const sidebar = document.querySelector('.sidebar');
-      sidebar.classList.toggle('open');
-    }
-
-    function closeSidebar() {
-      const sidebar = document.querySelector('.sidebar');
-      sidebar.classList.remove('open');
-    }
-
-    const posts = [
-      {
-        id: "post-3",
-        avatar: "image_assets/profile-pictures/polarbear.jpeg",
-        username: "@polarbear",
-        date: "Nov 11, 2024",
-        storyType: "Fading Glimpses",
-        headline: "The Graveyard of Promises - Chapter 1",
-        story: "So there was a girl, let's call her Nimmi (yeah, sounds cute, I know, after all, I gave her this name), whom I met 7 years ago when I was in class 5. It wasn't anything special between us at that time. I didn't even bother to ask her name because, yeah, I was afraid of people. Yes, it sounds pretty odd for a guy who is so good with people now, was once afraid of them. Well, I didn't even have a word with her until I was in class 7, but yeah, in between those 2 years, one of my friends, let's call him 'Dude', had a crush on her, and it was pretty well known to everyone in the class. And yes, my friends used to hype them up... Well, she used to enjoy getting all the attention, but why am I telling you all of this? Does it really matter now after all these years? Maybe, maybe not, it's up to you. So for the first time in class 7, I tried having a conversation with her, not because of something special, but to set a girl up for me that I really liked. Yeah, I know, but it's natural. So it was, I guess, after our half-yearly examination, I called her and asked her, 'Listen, I want you to help me with something that only you can do,' and she replied to it saying, 'Yeah, sure.' This is part 1, stay tuned for part 2.",
-      },
-      // ... more posts to be added on top of the last post!
-      {
-        id: "post-2",
-        avatar: "https://avatars.githubusercontent.com/u/67505285?v=4",
-        username: "@siddharth19019",
-        date: "Nov 06, 2024",
-        storyType: "Resilience",
-        headline: "The story of facing changes and how it affected my life with a crush.",
-        story: "My story began when I was in the 9th grade, I had changed schools, and it was my first day at my new school, I expected to make new friends and experience a new environment, one that would be better than my previous school, but what happened was entirely different, the experience was devastating, when I entered the classroom, there were only a few people, all busy writing something in their notebooks, I walked in, but no one even looked up to ask who I was, I ended up sitting on the last bench, feeling like everything was very strange, the day began with classes, English went fine, and so did the language classes, I thought I had made a good decision, but then came math class, the teacher told me that I had joined late, and they had almost finished the first chapter, she informed me that I needed to catch up by completing nearly 70 pages of notes, not only that—I also had to catch up on notes for chemistry, physics, and biology, I didn't feel the weight of it all at that moment, I stayed back at school until 5:30 to finish the notes, luckily, I had my friend Naveen, who stayed with me to keep me company while I did my homework, I thought I had made a good friend and that things would improve, but I was mistaken, I deeply missed my old friends, and the teachers at this new school were intensely focused on academics, that night, I stayed up until 1:30 a.m. to complete all my notes and finally finished them, but just as I thought I was done, I realized I had four tests the next day, it was hard to study, given how much I'd already had to do, to make things worse, I had mistakenly written my biology notes in a ruled notebook when they were supposed to go in an unruled one, the teacher tore out the pages and told me to rewrite everything, my social studies teacher asked me to read and memorize the preamble because I couldn’t answer her questions, I started feeling very down and wished I could go back to my old school, I began to regret my decision to switch schools, I tried hard to adjust, but it was overwhelming, the teachers assigned practice notebooks, which were filled with lecture notes that I had to write by reading the textbook and understanding the content, I wrote all the practice notes and submitted them on time, but there was even more work waiting for me, I had daily tests in each subject, and I had to study for those too, often sacrificing sleep, the one bright spot was that they made me the Yellow House captain in my school, I was recognized by my juniors, and I won the election for the role with their support, my friends were there to help me overcome my challenges, supporting me through it all, as Yellow House captain, I worked hard to help my team succeed in sports and managed to keep up with my academics too, it was a proud moment to speak on stage at the school ceremony, I even got the chance to participate in cultural events, which brought me some recognition and fame, around that time, I had my first crush—a beautiful girl in my class, I felt a deep connection with her from the start, I told my friends, and they offered to help me express my feelings, I became friends with her but didn’t have the courage to tell her how I really felt, I kept it a secret, hoping for the right moment, I remember doing some awkward things back then; if I could go back in time, I would give myself a stern reminder to act differently, I was a good friend to her, and I think that’s all I was capable of being at that time, I finally expressed my feelings on the day of the cultural event, but it didn’t go as I’d hoped, when I told her that I liked her, she revealed that she liked one of my friends and that they had recently broken up, she said she might have liked me if we had met earlier, but now we could only be friends, her words were painful, and it took me about three months to move on, but I continued being a loyal friend to her, which is something I feel proud of to this day, over time, the school became like a second home to me, I spent nearly 10 hours there each day, more than I did at home, I fulfilled my council duties, completed 10th grade with a good score, and in 11th grade, I was appointed assistant head boy, a role I earned with the popularity I had built in the school, looking back, even though these changes made me feel bad at times, they played a major role in shaping my character, I believe my school experience helped shape who I am today, especially in developing my leadership skills, I hope my story shows that everyone faces challenges in life, but after overcoming them, the journey becomes sweet, thank you for reading patiently!",
-      },
-      // ... more posts to be added on top of the last post!
-      {
-        id: "post-1",
-        avatar: "https://avatars.githubusercontent.com/u/122402982?v=4",
-        username: "@antagonizzzt",
-        date: "Nov 05, 2024",
-        storyType: "Olden Golden Memories",
-        headline: "Back to School - Chapter 01",
-        story: "Long ago, there lived a boy named Zzz. He was a very small kid and didn't know anything about the environment or people. He went to school daily but was a below-average student. He didn't even do his homework. The funny guy was not at all interested in studies, and so he scored poor marks. His parents were very loving and kept motivating him with kind words even though he scored poorly. He didn't even have his own unique handwriting. He always tried to copy homework from other students—not only the content but also the handwriting itself. He had different handwriting for different subjects! That's why he couldn't maintain good handwriting. Months passed, years passed. Now he was in 3rd standard. One day, as usual, he forgot to do his math homework and submitted his notebook blank. His math teacher, named Rekha, called his name. With fear in his eyes, Zzz walked slowly towards his teacher.  His math teacher angrily asked him why he didn't do his homework. He replied to his teacher with a shaky, trembling voice that he 'forgot.' Hearing that, his math teacher became furious and took a wooden pencil, placing it between Zzz's fingers. She held his fingers tightly with one hand and kept twisting the pencil with the other. Zzz started crying out loud in pain. Yet, the math teacher didn't stop and kept twisting the pencil. Zzz's body shivered heavily that whole day, and he couldn't even hold anything with his hand. He couldn't tolerate that much physical pain and cried all day. His poor little eyes dried up from crying. He somehow managed to eat lunch, but only a quarter of what was in his lunch box. That incident left a lifelong trauma in his heart, and he hated math very much. Somehow, he passed all the exams and was promoted to class 4. Do you think this silly guy would change in the 4th standard? Nah, that's not in his case. One day, he forgot his social science homework and submitted it blank. As usual, a strict social science teacher entered the class... to be continued...",
-      }
-      // ... more posts to be added on top of the last post!
-    ];
-
-    const postContainer = document.getElementById('post-container');
-
-    function createSlug(headline) {
-      return headline.toLowerCase().replace(/[^\w\s-]/g, '').replace(/\s+/g, '-');
-    }
-
-    function createPostLink(post) {
-      const url = new URL(window.location.href);
-      const baseUrl = url.origin + url.pathname;
-      return `${baseUrl}?username=${encodeURIComponent(post.username)}#${createSlug(post.headline)}`;
-    }
-
-    function createAuthorLink(username) {
-      return `https://onlyforherforever.github.io/author/${username}`;
-    }
-
-    function createPostElement(post) {
-      return `
-        <div class="post" id="${createSlug(post.headline)}" data-date="${post.date}">
-          <div class="header">
-            <img class="avatar" src="${post.avatar}" alt="Avatar">
-            <div>
-              <span class="username">${post.username}</span>
-              <span class="date">${post.date}</span>
-              <span class="story-type">${post.storyType}</span>
-            </div>
+    <div id="post-container">
+      <!-- Post number 5 -->
+      <div class="post" id="this-is-what-it-feels-like-prologue" data-date="Jan 10, 2025">
+        <div class="header">
+          <img class="avatar" src="https://i.ibb.co/NT5JZNN/download.jpg" alt="Avatar">
+          <div>
+            <span class="username">@jameshowlett</span>
+            <span class="date">Jan 10, 2025</span>
+            <span class="story-type">Foresight</span>
           </div>
-          <div class="headline">${post.headline}</div>
-          <div class="story-content">${post.story}</div>
-          <div class="expand">Read more...</div>
-          <div class="share-buttons"> 
-            <a href="#" class="share-button" data-post-headline="${post.headline}">
-              <i class="fas fa-share-alt"></i> Love this story? 
+        </div>
+        <div class="headline">This is what it Feels like! - PROLOGUE</div>
+        <div class="story-content">So, my first meeting with the girl that I am going to tell you about is accidental, purely unexpected. Also, my English isn't that great as I am still in the learning phase. So, there is a friend of mine, let's just say him Nalbaaz, he was in a relationship with a girl, let's just say her Sonpapri. Sonpapri was actually my class fellow, but I was more into my friends, so I never talked to girls and also to her. But the next year, she left the school. Cutback to present days, Nalbaaz was in a relationship with Sonpapri, and everything was going fine. But one day, as Nalbaaz and I were hanging out, I asked him about his relationship. He replied that his relationship was over. I laughed and gave him tips and tricks of how to manage a relationship as a professionally single person. But suddenly, he thought of something, an idea. He said me to follow Sonpapri on Instagram and ask her why she broke up with him. Nalbaaz also asked me for my password. At first, I was being skeptical of giving my password, but since there was nothing important in my account, I gave it to him. After 1-2 days, she followed me back, and I was in shock that this was the first girl that accepted my request so soon. For a few days, we didn't talk, and I was minding my own business. But my friend insisted that I message her. I am a very boring guy; I do not have any topic to talk about. The only thing that could start the conversation between me and Sonpapri was my music. I listen to Electronic Dance Music, and no one in my friend circle finds my music taste to be good. So, it was late at night, and with low expectations, I sent her ''The Strobe by Deadmau5''.  I was going to sleep, but to my surprise, she saw the message...</div>
+        <div class="expand" onclick="toggleStoryContent(this)">Read more...</div>
+        <div class="buttons-container">
+          <div class="share-buttons">
+            <a href="#" class="share-button" data-post-headline="This is what it Feels like! - PROLOGUE" onclick="shareStory(this)">
+              <i class="fas fa-share-alt"></i> Love this story?
             </a>
-            <a href="#" class="share-author-button" data-username="${post.username}">
+          </div>
+          <div class="share-buttons">
+            <a href="#" class="share-author-button" data-username="@jameshowlett">
               <i class="fas fa-user-alt"></i> Share this author!
             </a>
           </div>
         </div>
-      `;
+      </div>
+      <!-- Post number 4 -->
+      <div class="post" id="back-to-school-chapter-02" data-date="Dec 03, 2024">
+        <div class="header">
+          <img class="avatar" src="https://avatars.githubusercontent.com/u/122402982?v=4" alt="Avatar">
+          <div>
+            <span class="username">@antagonizzzt</span>
+            <span class="date">Dec 03, 2024</span>
+            <span class="story-type">Olden Golden Memories</span>
+          </div>
+        </div>
+        <div class="headline">Back to School - Chapter 02</div>
+        <div class="story-content">As usual, a strict social science teacher named Mrs. Chitra entered the class. Zzz trembled in fear. But surprisingly, the teacher didn't ask for the homework and started to teach another topic. He became very happy that the teacher wasn't asking about the homework. But his happiness didn't last for a minute. Because the content she taught was very little, and she completed her class soon. Then she started to correct the submitted homework notebooks. After seeing Zzz's empty homework, she shouted his name. He stood up in fear and approached his teacher. She asked why he hadn't completed his homework. He started to tell many stories to escape punishment. But the teacher realized that he was lying. With raging anger, the teacher slapped him twice. The whole class became silent and watched him getting slapped. That was an awkward moment that he still remembers today. But that day he didn't cry. Because that slap wasn't that painful. But he started to think about the other classmates who watched him getting hit. Then he understood that he deserved that hit. Because everyone else had completed the homework that day. This is the first life lesson where he started to understand about life and how it progresses. After a few days, the math teacher (named Kavitha) planned for an oral test and asked all the students to memorize the multiplication tables up to 20. Somehow, Zzz managed to memorize up to 10 tables. But his math teacher asked him the 13th table. What an unlucky day! He couldn't tell the tables because he knew only up to 10. So the math teacher shouted at him to get out. But this time many students couldn't answer the oral test and were sent out like him. While standing outside, he memorized the 13th table and told her that he was ready for the oral test again. Then the teacher asked him to tell the 13th table again. Finally, he made it without any mistakes. And the teacher asked all the students to clap their hands. This might be a small thing, but this was the first and best appreciation that he received in his school days. That day his confidence level was at its peak. After that incident, his academic performance improved very much. And do you know, guys, he secured 4th rank in that term examination. Day after day, he became his math teacher's favorite, and that's how he loved math. Then he was promoted to class 5. -to be continued...</div>
+        <div class="expand" onclick="toggleStoryContent(this)">Read more...</div>
+        <div class="buttons-container">
+          <div class="share-buttons">
+            <a href="#" class="share-button" data-post-headline="Back to School - Chapter 02" onclick="shareStory(this)">
+              <i class="fas fa-share-alt"></i> Love this story?
+            </a>
+          </div>
+          <div class="share-buttons">
+            <a href="#" class="share-author-button" data-username="@antagonizzzt">
+              <i class="fas fa-user-alt"></i> Share this author!
+            </a>
+          </div>
+        </div>
+      </div>
+      <!-- Post number 3 -->
+      <div class="post" id="the-graveyard-of-promises-chapter-1" data-date="Nov 11, 2024">
+        <div class="header">
+          <img class="avatar" src="image_assets/profile-pictures/polarbear.jpeg" alt="Avatar">
+          <div>
+            <span class="username">@polarbear</span>
+            <span class="date">Nov 11, 2024</span>
+            <span class="story-type">Fading Glimpses</span>
+          </div>
+        </div>
+        <div class="headline">The Graveyard of Promises - Chapter 1</div>
+        <div class="story-content">So there was a girl, let's call her Nimmi (yeah, sounds cute, I know, after all, I gave her this name), whom I met 7 years ago when I was in class 5. It wasn't anything special between us at that time. I didn't even bother to ask her name because, yeah, I was afraid of people. Yes, it sounds pretty odd for a guy who is so good with people now, was once afraid of them. Well, I didn't even have a word with her until I was in class 7, but yeah, in between those 2 years, one of my friends, let's call him 'Dude', had a crush on her, and it was pretty well known to everyone in the class. And yes, my friends used to hype them up... Well, she used to enjoy getting all the attention, but why am I telling you all of this? Does it really matter now after all these years? Maybe, maybe not, it's up to you. So for the first time in class 7, I tried having a conversation with her, not because of something special, but to set a girl up for me that I really liked. Yeah, I know, but it's natural. So it was, I guess, after our half-yearly examination, I called her and asked her, 'Listen, I want you to help me with something that only you can do,' and she replied to it saying, 'Yeah, sure.' This is part 1, stay tuned for part 2.</div>
+        <div class="expand" onclick="toggleStoryContent(this)">Read more...</div>
+        <div class="buttons-container">
+          <div class="share-buttons">
+            <a href="#" class="share-button" data-post-headline="The Graveyard of Promises - Chapter 1" onclick="shareStory(this)">
+              <i class="fas fa-share-alt"></i> Love this story?
+            </a>
+          </div>
+          <div class="share-buttons">
+            <a href="#" class="share-author-button" data-username="@polarbear">
+              <i class="fas fa-user-alt"></i> Share this author!
+            </a>
+          </div>
+        </div>
+      </div>
+      <!-- Post number 2 -->
+      <div class="post" id="the-story-of-facing-changes-and-how-it-affected-my-life-with-a-crush" data-date="Nov 06, 2024">
+        <div class="header">
+          <img class="avatar" src="https://avatars.githubusercontent.com/u/67505285?v=4" alt="Avatar">
+          <div>
+            <span class="username">@siddharth19019</span>
+            <span class="date">Nov 06, 2024</span>
+            <span class="story-type">Resilience</span>
+          </div>
+        </div>
+        <div class="headline">The story of facing changes and how it affected my life with a crush.</div>
+        <div class="story-content">My story began when I was in the 9th grade, I had changed schools, and it was my first day at my new school, I expected to make new friends and experience a new environment, one that would be better than my previous school, but what happened was entirely different, the experience was devastating, when I entered the classroom, there were only a few people, all busy writing something in their notebooks, I walked in, but no one even looked up to ask who I was, I ended up sitting on the last bench, feeling like everything was very strange, the day began with classes, English went fine, and so did the language classes, I thought I had made a good decision, but then came math class, the teacher told me that I had joined late, and they had almost finished the first chapter, she informed me that I needed to catch up by completing nearly 70 pages of notes, not only that—I also had to catch up on notes for chemistry, physics, and biology, I didn't feel the weight of it all at that moment, I stayed back at school until 5:30 to finish the notes, luckily, I had my friend Naveen, who stayed with me to keep me company while I did my homework, I thought I had made a good friend and that things would improve, but I was mistaken, I deeply missed my old friends, and the teachers at this new school were intensely focused on academics, that night, I stayed up until 1:30 a.m. to complete all my notes and finally finished them, but just as I thought I was done, I realized I had four tests the next day, it was hard to study, given how much I'd already had to do, to make things worse, I had mistakenly written my biology notes in a ruled notebook when they were supposed to go in an unruled one, the teacher tore out the pages and told me to rewrite everything, my social studies teacher asked me to read and memorize the preamble because I couldn’t answer her questions, I started feeling very down and wished I could go back to my old school, I began to regret my decision to switch schools, I tried hard to adjust, but it was overwhelming, the teachers assigned practice notebooks, which were filled with lecture notes that I had to write by reading the textbook and understanding the content, I wrote all the practice notes and submitted them on time, but there was even more work waiting for me, I had daily tests in each subject, and I had to study for those too, often sacrificing sleep, the one bright spot was that they made me the Yellow House captain in my school, I was recognized by my juniors, and I won the election for the role with their support, my friends were there to help me overcome my challenges, supporting me through it all, as Yellow House captain, I worked hard to help my team succeed in sports and managed to keep up with my academics too, it was a proud moment to speak on stage at the school ceremony, I even got the chance to participate in cultural events, which brought me some recognition and fame, around that time, I had my first crush—a beautiful girl in my class, I felt a deep connection with her from the start, I told my friends, and they offered to help me express my feelings, I became friends with her but didn’t have the courage to tell her how I really felt, I kept it a secret, hoping for the right moment, I remember doing some awkward things back then; if I could go back in time, I would give myself a stern reminder to act differently, I was a good friend to her, and I think that’s all I was capable of being at that time, I finally expressed my feelings on the day of the cultural event, but it didn’t go as I’d hoped, when I told her that I liked her, she revealed that she liked one of my friends and that they had recently broken up, she said she might have liked me if we had met earlier, but now we could only be friends, her words were painful, and it took me about three months to move on, but I continued being a loyal friend to her, which is something I feel proud of to this day, over time, the school became like a second home to me, I spent nearly 10 hours there each day, more than I did at home, I fulfilled my council duties, completed 10th grade with a good score, and in 11th grade, I was appointed assistant head boy, a role I earned with the popularity I had built in the school, looking back, even though these changes made me feel bad at times, they played a major role in shaping my character, I believe my school experience helped shape who I am today, especially in developing my leadership skills, I hope my story shows that everyone faces challenges in life, but after overcoming them, the journey becomes sweet, thank you for reading patiently!</div>
+        <div class="expand" onclick="toggleStoryContent(this)">Read more...</div>
+        <div class="buttons-container">
+          <div class="share-buttons">
+            <a href="#" class="share-button" data-post-headline="The story of facing changes and how it affected my life with a crush." onclick="shareStory(this)">
+              <i class="fas fa-share-alt"></i> Love this story?
+            </a>
+          </div>
+          <div class="share-buttons">
+            <a href="#" class="share-author-button" data-username="@siddharth19019">
+              <i class="fas fa-user-alt"></i> Share this author!
+            </a>
+          </div>
+        </div>
+      </div>
+      <!-- Post number 1 -->
+      <div class="post" id="back-to-school-chapter-01" data-date="Nov 05, 2024">
+        <div class="header">
+          <img class="avatar" src="https://avatars.githubusercontent.com/u/122402982?v=4" alt="Avatar">
+          <div>
+            <span class="username">@antagonizzzt</span>
+            <span class="date">Nov 05, 2024</span>
+            <span class="story-type">Olden Golden Memories</span>
+          </div>
+        </div>
+        <div class="headline">Back to School - Chapter 01</div>
+        <div class="story-content">Long ago, there lived a boy named Zzz. He was a very small kid and didn't know anything about the environment or people. He went to school daily but was a below-average student. He didn't even do his homework. The funny guy was not at all interested in studies, and so he scored poor marks. His parents were very loving and kept motivating him with kind words even though he scored poorly. He didn't even have his own unique handwriting. He always tried to copy homework from other students—not only the content but also the handwriting itself. He had different handwriting for different subjects! That's why he couldn't maintain good handwriting. Months passed, years passed. Now he was in 3rd standard. One day, as usual, he forgot to do his math homework and submitted his notebook blank. His math teacher, named Rekha, called his name. With fear in his eyes, Zzz walked slowly towards his teacher.  His math teacher angrily asked him why he didn't do his homework. He replied to his teacher with a shaky, trembling voice that he 'forgot.' Hearing that, his math teacher became furious and took a wooden pencil, placing it between Zzz's fingers. She held his fingers tightly with one hand and kept twisting the pencil with the other. Zzz started crying out loud in pain. Yet, the math teacher didn't stop and kept twisting the pencil. Zzz's body shivered heavily that whole day, and he couldn't even hold anything with his hand. He couldn't tolerate that much physical pain and cried all day. His poor little eyes dried up from crying. He somehow managed to eat lunch, but only a quarter of what was in his lunch box. That incident left a lifelong trauma in his heart, and he hated math very much. Somehow, he passed all the exams and was promoted to class 4. Do you think this silly guy would change in the 4th standard? Nah, that's not in his case. One day, he forgot his social science homework and submitted it blank. As usual, a strict social science teacher entered the class... to be continued...</div>
+        <div class="expand" onclick="toggleStoryContent(this)">Read more...</div>
+        <div class="buttons-container">
+          <div class="share-buttons">
+            <a href="#" class="share-button" data-post-headline="Back to School - Chapter 01" onclick="shareStory(this)">
+              <i class="fas fa-share-alt"></i> Love this story?
+            </a>
+          </div>
+          <div class="share-buttons">
+            <a href="#" class="share-author-button" data-username="@antagonizzzt">
+              <i class="fas fa-user-alt"></i> Share this author!
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+<!-- Scripts -->
+<script>
+  // Toggle between dark mode and bright mode
+  function toggleTheme() {
+    document.body.classList.toggle('bright-mode');
+    const button = document.querySelector('.theme-toggle');
+    if (document.body.classList.contains('bright-mode')) {
+      button.textContent = 'Switch to Dark Mode';
+    } else {
+      button.textContent = 'Switch to Bright Mode';
     }
+    closeSidebar();
+  }
 
-    const urlParams = new URLSearchParams(window.location.search);
-const username = urlParams.get('username');
+  function toggleSidebar() {
+    const sidebar = document.querySelector('.sidebar');
+    sidebar.classList.toggle('open');
+  }
 
-// Update the header logo text based on the selected username
-if (username) {
-  const logoText = document.getElementById('logo-text');
-  const alphabetOnlyUsername = username.replace(/[^a-zA-Z]/g, '');
-  logoText.textContent = `${alphabetOnlyUsername}'s Stories♡`;
-}
+  // Function to close the sidebar manually
+  function closeSidebar() {
+    const sidebar = document.querySelector('.sidebar');
+    sidebar.classList.remove('open');
+  }
 
-posts.filter(post => post.username === username).forEach(post => {
-  const postElement = createPostElement(post);
-  postContainer.innerHTML += postElement;
-});
+  // Update the header logo text based on the selected username
+  const urlParams = new URLSearchParams(window.location.search);
+  const username = urlParams.get('username');
+  if (username) {
+    const logoText = document.getElementById('logo-text');
+    const alphabetOnlyUsername = username.replace(/[^a-zA-Z]/g, '');
+    logoText.textContent = `${alphabetOnlyUsername}s Stories♡`;
 
-document.querySelectorAll('.expand').forEach(link => {
-  link.addEventListener('click', () => {
-    const storyContent = link.previousElementSibling;
+    // Filter posts based on the username
+    const posts = document.querySelectorAll('.post');
+    posts.forEach(post => {
+      const postUsername = post.querySelector('.username').textContent.trim();
+      if (postUsername !== username) {
+        post.style.display = 'none'; // Hide posts that don't match the username
+      }
+    });
+  }
+
+  // Expand or collapse post content
+  function toggleStoryContent(element) {
+    const storyContent = element.previousElementSibling;
     storyContent.style.display = storyContent.style.display === 'block' ? 'none' : 'block';
-    link.textContent = storyContent.style.display === 'block' ? 'Read less' : 'Read more...';
-  });
-});
+    element.textContent = storyContent.style.display === 'block' ? 'Read less' : 'Read more...';
+  }
 
-postContainer.addEventListener('click', async (event) => {
-  if (event.target.classList.contains('share-button')) {
-    const postHeadline = event.target.dataset.postHeadline;
-    const post = posts.find(p => p.headline === postHeadline);
+  // Function to create a URL-friendly slug from the headline
+  function createSlug(headline) {
+    return headline.toLowerCase().replace(/[^\w\s-]/g, '').replace(/\s+/g, '-').replace(/-+/g, '-');
+  }
 
-    const postLink = createPostLink(post);
-    const shareText = `**${post.headline}**\n\n${post.story.substring(0, 100)}...\n\nRead more: ${postLink}`;
+  // Function to create a shareable link based on the headline
+  function createPostLink(postHeadline) {
+    const url = new URL(window.location.href);
+    url.hash = createSlug(postHeadline);
+    return url.toString();
+  }
+
+  // Function to share the story
+  async function shareStory(element) {
+    const postHeadline = element.dataset.postHeadline;
+    const slug = createSlug(postHeadline);
+    console.log(`Post headline: ${postHeadline}`);
+    console.log(`Generated slug: ${slug}`);
+    const postElement = document.getElementById(slug);
+    if (!postElement) {
+      console.error('Post element not found for headline:', postHeadline);
+      return;
+    }
+    const storyContentElement = postElement.querySelector('.story-content');
+    if (!storyContentElement) {
+      console.error('Story content element not found for headline:', postHeadline);
+      return;
+    }
+    const storyContent = storyContentElement.textContent;
+    const postLink = createPostLink(postHeadline);
+    const shareText = `**${postHeadline}**\n\n${storyContent.substring(0, 100)}...\n\nRead more: ${postLink}`;
 
     if (navigator.share) {
       try {
@@ -196,7 +272,7 @@ postContainer.addEventListener('click', async (event) => {
           text: shareText,
         });
       } catch (error) {
-        console.log('Error sharing:', error);
+        console.error('Error sharing:', error);
       }
     } else {
       try {
@@ -208,8 +284,19 @@ postContainer.addEventListener('click', async (event) => {
     }
   }
 
-  if (event.target.classList.contains('share-author-button')) {
-    const username = event.target.dataset.username;
+  // Add event listeners to all share buttons
+  document.querySelectorAll('.share-button').forEach(button => {
+    const postHeadline = button.dataset.postHeadline;
+    const slug = createSlug(postHeadline);
+    button.dataset.slug = slug;
+    button.addEventListener('click', (event) => {
+      shareStory(event.target.closest('.share-button'));
+    });
+  });
+
+  // Function to share the author
+  async function shareAuthor(element) {
+    const username = element.dataset.username;
     const authorLink = createAuthorLink(username);
     const shareText = `**Check out stories by** ${username} at ${authorLink}`;
 
@@ -220,7 +307,7 @@ postContainer.addEventListener('click', async (event) => {
           text: shareText,
         });
       } catch (error) {
-        console.log('Error sharing:', error);
+        console.error('Error sharing:', error);
       }
     } else {
       try {
@@ -231,12 +318,22 @@ postContainer.addEventListener('click', async (event) => {
       }
     }
   }
-});
 
-function createAuthorLink(username) {
-  return `${window.location.origin}${window.location.pathname}?username=${encodeURIComponent(username)}`;
-}
-  </script>
+  // Add event listeners to all share author buttons
+  document.querySelectorAll('.share-author-button').forEach(button => {
+    const username = button.dataset.username;
+    const slug = createSlug(username);
+    button.dataset.slug = slug;
+    button.addEventListener('click', (event) => {
+      shareAuthor(event.target.closest('.share-author-button'));
+    });
+  });
+
+  // Function to create author link
+  function createAuthorLink(username) {
+    return `${window.location.origin}${window.location.pathname}?username=${encodeURIComponent(username)}`;
+  }
+</script>
 
 </body>
 </html>
